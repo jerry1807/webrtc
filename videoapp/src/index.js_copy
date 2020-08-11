@@ -1,0 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import VideoRoomComponent from './components/VideoRoomComponent';
+import registerServiceWorker from './registerServiceWorker';
+
+const urlParams = new URLSearchParams(window.location.search);
+const sessionName = urlParams.get('session');
+const userName = urlParams.get('name');
+
+ReactDOM.render(<VideoRoomComponent sessionName={sessionName} user={userName} />, document.getElementById('root'));
+registerServiceWorker();
